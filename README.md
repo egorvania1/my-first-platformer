@@ -17,3 +17,5 @@
 ### Ресурсы:
 - https://www.youtube.com/watch?v=LOhfqjmasi0
 - https://www.youtube.com/watch?v=bJOpkFIEwCA
+
+![Screenshot](https://github.com/egorvania1/my-first-platformer/blob/main/platformer.png)
