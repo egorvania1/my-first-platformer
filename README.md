@@ -25,5 +25,6 @@
 - https://www.youtube.com/watch?v=LOhfqjmasi0 (База игры)
 - https://www.youtube.com/watch?v=bJOpkFIEwCA (Coyote jump)
 - https://www.youtube.com/watch?v=CAMHDTZdSCs (Double jump)
+- https://www.youtube.com/watch?v=GZrALMvOwY8 (Смена уровня)
 
 ![Screenshot](https://github.com/egorvania1/my-first-platformer/blob/main/platformer.png)
