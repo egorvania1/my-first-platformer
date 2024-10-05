@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://ehf6lnri4l86"]
+[gd_scene load_steps=7 format=4 uid="uid://ehf6lnri4l86"]
 
 [ext_resource type="TileSet" uid="uid://kfd0ev30o4kt" path="res://resources/world_tileset.tres" id="1_j181h"]
 [ext_resource type="PackedScene" uid="uid://b0gi4br7e1ctj" path="res://scenes/player.tscn" id="2_6yc80"]
 [ext_resource type="PackedScene" uid="uid://lclqkoen4lk5" path="res://scenes/killzone.tscn" id="3_ag8h2"]
 [ext_resource type="PackedScene" uid="uid://c8woaijp01fsf" path="res://scenes/spike.tscn" id="4_6nnib"]
+[ext_resource type="PackedScene" uid="uid://be2awtk52gqac" path="res://scenes/slime.tscn" id="5_035gt"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hta2y"]
 distance = -125.0
@@ -35,5 +36,19 @@ shape = SubResource("WorldBoundaryShape2D_hta2y")
 
 [node name="Obstacles" type="Node" parent="."]
 
-[node name="Node2D" parent="Obstacles" instance=ExtResource("4_6nnib")]
-position = Vector2(40, -8)
+[node name="Spike" parent="Obstacles" instance=ExtResource("4_6nnib")]
+position = Vector2(168, -8)
+
+[node name="Spike2" parent="Obstacles" instance=ExtResource("4_6nnib")]
+position = Vector2(184, -8)
+
+[node name="Spike3" parent="Obstacles" instance=ExtResource("4_6nnib")]
+position = Vector2(200, -8)
+
+[node name="Spike4" parent="Obstacles" instance=ExtResource("4_6nnib")]
+position = Vector2(264, -8)
+
+[node name="Enemy" type="Node" parent="."]
+
+[node name="Slime" parent="Enemy" instance=ExtResource("5_035gt")]
+position = Vector2(232, 0)
