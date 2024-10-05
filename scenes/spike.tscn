@@ -10,7 +10,7 @@
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Killzone"]
 position = Vector2(-0.1, -0.1)
 scale = Vector2(1.00781, 1.00781)
-polygon = PackedVector2Array(-8, 8, 0, -8, 8, 8)
+polygon = PackedVector2Array(-4.86202, 8.03721, 0.0992252, -2.87752, 5.06047, 8.03721)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_om50a")
