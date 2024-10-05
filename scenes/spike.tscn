@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://lclqkoen4lk5" path="res://scenes/killzone.tscn" id="1_v3mjg"]
 [ext_resource type="Texture2D" uid="uid://ddrb6u1gio7pl" path="res://assets/sprites/spike.png" id="2_om50a"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Spike" type="Node2D"]
 
 [node name="Killzone" parent="." instance=ExtResource("1_v3mjg")]
 
