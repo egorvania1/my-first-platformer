@@ -12,7 +12,8 @@ func _ready() -> void:
 		animated_sprite.flip_h = true
 
 func _physics_process(delta: float) -> void:
-	velocity += get_gravity() * delta
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 		
 	if ray_cast_right.is_colliding():
 		direction = -1
