@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd58x2xbu58tv"]
+
+[ext_resource type="Script" path="res://scripts/global_hotkeys.gd" id="1_ouvm1"]
+
+[node name="GlobalHotkeys" type="Node"]
+script = ExtResource("1_ouvm1")
+
+[node name="Cooldown" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true

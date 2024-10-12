@@ -3,8 +3,8 @@
 ### Запланировано:
 - [x] Двойной прыжок
 - [x] Coyote jump
-- [ ] Alt + Enter Полный экран
-- [ ] Звук потише
+- [x] Alt + Enter Полный экран
+- [x] Звук потише
 - [ ] Прыжок от силы нажатия
 - [ ] Чтобы звук на звук не накладывался (у монеток)
 - [ ] "(Добавить) пушку которая стреляет пилами" - Алексей
@@ -25,6 +25,7 @@
 - https://www.youtube.com/watch?v=LOhfqjmasi0 (База игры)
 - https://www.youtube.com/watch?v=bJOpkFIEwCA (Coyote jump)
 - https://www.youtube.com/watch?v=CAMHDTZdSCs (Double jump)
-- https://www.youtube.com/watch?v=GZrALMvOwY8 (Смена уровня)
+- https://www.youtube.com/watch?v=GZrALMvOwY8 (Смена уровня) 
+- https://github.com/godotengine/godot-proposals/issues/1983 (Alt + Enter)
 
 ![Screenshot](https://github.com/egorvania1/my-first-platformer/blob/main/platformer.png)
