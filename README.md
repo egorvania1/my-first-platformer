@@ -9,12 +9,12 @@
 - [ ] Сделать так, чтобы не накладывался один звук на другой (у монеток)
 - [ ] Платформы без AnimationPlayer
 - [ ] (2/4) Больше уровней
-- [ ] Больше анимаций со спецэффектами
-- [ ] Больше звуков
-- [ ] Больше врагов
+- [ ] Анимации с эффектами к игроку
+- [ ] Звуки ко всему (Игрок, враги)
+- [ ] Летающий враг
 - [x] Смену уровней
-- [ ] (1) Больше препятствий на уровнях
-- [ ] Усиления/способности
+- [x] Препятсвие: шипы
+- [x] Способность: двойной прыжок (по умолчанию нету у игрока)
 - [ ] "...пушку которая стреляет пилами" - Алексей
 - [ ] Главное меню
 - [ ] Анимацию смены уровней/Экран загрузки
@@ -24,5 +24,6 @@
 - https://www.youtube.com/watch?v=bJOpkFIEwCA (Coyote jump)
 - https://www.youtube.com/watch?v=CAMHDTZdSCs (Double jump)
 - https://www.youtube.com/watch?v=GZrALMvOwY8 (Смена уровня)
+- https://forum.godotengine.org/t/2d-platformer-how-to-control-jump-height-mario-like-jumps/28736/3 (Прыжок от силы нажатия)
 
 ![Screenshot](https://github.com/egorvania1/my-first-platformer/blob/main/platformer.png)
