@@ -68,3 +68,6 @@ func _physics_process(delta: float) -> void:
 	#start coyote jump if not on floor
 	if was_on_floor && !is_on_floor():
 		coyote_timer.start()
+
+func add_jump():
+	max_jumps += 1
