@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://dks5m1rcw6nya"]
+[gd_scene load_steps=4 format=4 uid="uid://dks5m1rcw6nya"]
 
 [ext_resource type="TileSet" uid="uid://kfd0ev30o4kt" path="res://resources/world_tileset.tres" id="1_q53cy"]
 [ext_resource type="PackedScene" uid="uid://b0gi4br7e1ctj" path="res://scenes/player.tscn" id="2_2034b"]
+[ext_resource type="PackedScene" uid="uid://bs4eg10665nfu" path="res://scenes/jump_powerup.tscn" id="3_5sd75"]
 
 [node name="Level3" type="Node2D"]
 
@@ -14,3 +15,6 @@ position = Vector2(8, -12)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
+
+[node name="JumpPowerup" parent="." instance=ExtResource("3_5sd75")]
+position = Vector2(24, -22)
