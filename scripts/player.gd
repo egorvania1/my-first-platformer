@@ -5,7 +5,6 @@ const SPEED = 130.0
 const JUMP_VELOCITY = -320.0
 var jump_count = 0
 @export var max_jumps = 1
-var is_jumping: bool = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var coyote_timer: Timer = $CoyoteTimer
@@ -18,21 +17,19 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	#reset double jumps and jump check
 	else:
-		is_jumping = false #player is definetely not in jump
 		jump_count = 0 #recharge jumps
 	
-	#start falling if jump button released
-	if Input.is_action_just_released("jump") and velocity.y < 0 and not is_on_floor() and is_jumping:
-		coyote_timer.stop() #stop coyote timer to prevent accidental jumps
-		velocity.y = 0
-	#TODO: make funciton for stopping jump prettier
 		
 	# Handle jump.
 	# jump if we have jumps or coyote timer is going
 	if Input.is_action_just_pressed("jump") and ((jump_count < max_jumps) or !coyote_timer.is_stopped()):
-		is_jumping = true #player initiated jump
 		velocity.y = JUMP_VELOCITY
 		jump_count += 1 #take one jump
+
+
+	if Input.is_action_just_released("jump") and velocity.y < 0:
+		velocity.y *= 0.2
+		
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("move_left", "move_right")
