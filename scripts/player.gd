@@ -1,13 +1,15 @@
 extends CharacterBody2D
 
 
-const SPEED = 130.0
-const JUMP_VELOCITY = -320.0
-var jump_count = 0
-@export var max_jumps = 1
+const SPEED: float = 130.0
+const JUMP_VELOCITY: float = -320.0
+var jump_count: int = 0
+@export var max_jumps: int = 1
+var jump_avaliable: bool = true
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var coyote_timer: Timer = $CoyoteTimer
+@onready var jump_buffer_timer: Timer = $JumpBufferTimer
 
 
 func _physics_process(delta: float) -> void:
@@ -18,14 +20,16 @@ func _physics_process(delta: float) -> void:
 	#reset double jumps and jump check
 	else:
 		jump_count = 0 #recharge jumps
+		if !jump_buffer_timer.is_stopped(): jump()
 	
 		
 	# Handle jump.
 	# jump if we have jumps or coyote timer is going
-	if Input.is_action_just_pressed("jump") and ((jump_count < max_jumps) or !coyote_timer.is_stopped()):
-		velocity.y = JUMP_VELOCITY
-		jump_count += 1 #take one jump
-
+	jump_avaliable = (jump_count < max_jumps) or !coyote_timer.is_stopped()
+	if Input.is_action_just_pressed("jump"):
+		if jump_avaliable: jump()
+		else: jump_buffer_timer.start()
+			
 
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y *= 0.2
@@ -68,3 +72,7 @@ func _physics_process(delta: float) -> void:
 
 func add_jump():
 	max_jumps += 1
+
+func jump():
+	velocity.y = JUMP_VELOCITY
+	jump_count += 1 #take one jump
