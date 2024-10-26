@@ -26,5 +26,6 @@
 - https://www.youtube.com/watch?v=CAMHDTZdSCs (Double jump)
 - https://www.youtube.com/watch?v=GZrALMvOwY8 (Смена уровня)
 - https://forum.godotengine.org/t/2d-platformer-how-to-control-jump-height-mario-like-jumps/28736/3 (Прыжок от силы нажатия)
+- https://www.youtube.com/watch?v=hRQW580zEJE (Buffer jump)
 
 ![Screenshot](https://github.com/egorvania1/my-first-platformer/blob/main/platformer.png)
