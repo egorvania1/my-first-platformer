@@ -22,19 +22,19 @@ func _physics_process(delta: float) -> void:
 		jump_count = 0 #recharge jumps
 		if !jump_buffer_timer.is_stopped(): jump()
 	
-		
-	# Handle jump.
+	
 	# jump if we have jumps or coyote timer is going
+	# I wonder if player can make extra jump while coyote timer is going...
 	jump_avaliable = (jump_count < max_jumps) or !coyote_timer.is_stopped()
+	
+	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
 		if jump_avaliable: jump()
 		else: jump_buffer_timer.start()
 			
-
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y *= 0.2
 		
-
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("move_left", "move_right")
 	
