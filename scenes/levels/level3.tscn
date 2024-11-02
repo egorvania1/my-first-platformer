@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://dks5m1rcw6nya"]
+[gd_scene load_steps=7 format=4 uid="uid://dks5m1rcw6nya"]
 
 [ext_resource type="TileSet" uid="uid://kfd0ev30o4kt" path="res://resources/world_tileset.tres" id="1_q53cy"]
 [ext_resource type="PackedScene" uid="uid://b0gi4br7e1ctj" path="res://scenes/player.tscn" id="2_2034b"]
 [ext_resource type="PackedScene" uid="uid://bs4eg10665nfu" path="res://scenes/jump_powerup.tscn" id="3_5sd75"]
 [ext_resource type="PackedScene" uid="uid://lclqkoen4lk5" path="res://scenes/killzone.tscn" id="4_shhg4"]
+[ext_resource type="PackedScene" uid="uid://6bcnjf3ye2ny" path="res://scenes/flying_enemy.tscn" id="5_7n82g"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a6l0v"]
 distance = -207.0
@@ -22,7 +23,6 @@ tile_set = ExtResource("1_q53cy")
 position = Vector2(8, -12)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-visible = false
 zoom = Vector2(4, 4)
 limit_left = -96
 limit_top = -540
@@ -36,3 +36,17 @@ collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_a6l0v")
+
+[node name="Enemy" type="Node" parent="."]
+
+[node name="Flying Enemy3" parent="Enemy" instance=ExtResource("5_7n82g")]
+position = Vector2(866, -281)
+
+[node name="Flying Enemy" parent="Enemy" instance=ExtResource("5_7n82g")]
+position = Vector2(457, -211)
+
+[node name="Flying Enemy2" parent="Enemy" instance=ExtResource("5_7n82g")]
+position = Vector2(632, -47)
+
+[node name="Flying Enemy4" parent="Enemy" instance=ExtResource("5_7n82g")]
+position = Vector2(1283, -253)
