@@ -32,6 +32,7 @@ limit_bottom = 200
 position = Vector2(24, -22)
 
 [node name="Killzone" parent="." instance=ExtResource("4_shhg4")]
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_a6l0v")

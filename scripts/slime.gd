@@ -23,3 +23,6 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.flip_h = false
 	velocity.x = direction * SPEED
 	move_and_slide()
+
+func damage():
+	queue_free()

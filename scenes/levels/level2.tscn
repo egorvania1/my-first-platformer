@@ -39,6 +39,7 @@ limit_right = 2250
 limit_bottom = 120
 
 [node name="Killzone" parent="." instance=ExtResource("3_ag8h2")]
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_hta2y")
