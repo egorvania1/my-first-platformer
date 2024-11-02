@@ -11,7 +11,7 @@ var can_move: bool = true
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var coyote_timer: Timer = $CoyoteTimer
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
-
+@onready var death_timer: Timer = $DeathTimer
 
 func _physics_process(delta: float) -> void:
 	
@@ -79,7 +79,13 @@ func jump():
 	jump_count += 1 #take one jump
 
 func damage():
+	death_timer.start()
 	Engine.time_scale = 0.5
 	get_node("CollisionShape2D").queue_free()
 	can_move = false
 	print("You died...")
+
+
+func _on_death_timer_timeout() -> void:
+	Engine.time_scale = 1.0
+	get_tree().reload_current_scene()

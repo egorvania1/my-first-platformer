@@ -5,8 +5,3 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("damage"):
 		body.damage()
-	if body.name == "Player": timer.start()
-
-func _on_timer_timeout() -> void:
-	Engine.time_scale = 1.0
-	get_tree().reload_current_scene()
