@@ -8,7 +8,8 @@ var jump_count: int = 0
 var jump_avaliable: bool = true
 var can_move: bool = true
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite : Sprite2D = $Sprite2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var coyote_timer: Timer = $CoyoteTimer
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
 @onready var death_timer: Timer = $DeathTimer
@@ -42,9 +43,9 @@ func _physics_process(delta: float) -> void:
 		
 		# Flip the sprite
 		if direction > 0:
-			animated_sprite.flip_h = false
+			sprite.flip_h = false
 		elif direction < 0:
-			animated_sprite.flip_h = true
+			sprite.flip_h = true
 			
 		# Apply movement
 		if direction:
@@ -52,14 +53,14 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 	
-	# Play animations
-	if is_on_floor():
-		if direction == 0:
-			animated_sprite.play("idle")
+		# Play animations
+		if is_on_floor():
+			if direction == 0:
+				animation_player.play("idle")
+			else:
+				animation_player.play("run")
 		else:
-			animated_sprite.play("run")
-	else:
-		animated_sprite.play("in_air")
+			animation_player.play("in_air")
 	
 	#check if character was on floor for coyote jump timer
 	#is_on_floor() updates only after move_and_slide()
@@ -76,13 +77,21 @@ func add_jump():
 
 func jump():
 	velocity.y = JUMP_VELOCITY
+	if jump_count != 0:
+		animation_player.play("double_jump")
 	jump_count += 1 #take one jump
 
 func damage():
+	can_move = false
+	
 	death_timer.start()
 	Engine.time_scale = 0.5
-	get_node("CollisionShape2D").queue_free()
-	can_move = false
+	
+	animation_player.play("death")
+	velocity.x = 0
+	velocity.y = 0
+	#get_node("CollisionShape2D").queue_free()
+
 	print("You died...")
 
 
