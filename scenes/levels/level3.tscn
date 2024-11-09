@@ -29,7 +29,7 @@ limit_top = -540
 limit_bottom = 200
 
 [node name="JumpPowerup" parent="." instance=ExtResource("3_5sd75")]
-position = Vector2(24, -22)
+position = Vector2(42, -40)
 
 [node name="Killzone" parent="." instance=ExtResource("4_shhg4")]
 collision_mask = 6
