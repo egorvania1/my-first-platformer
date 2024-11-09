@@ -9,9 +9,9 @@ func _process(delta: float) -> void:
 	if target:
 		var coord_x = to_local(target.global_position).x
 		if coord_x < 0:
-			sprite.flip_h = false
-		else:
 			sprite.flip_h = true
+		else:
+			sprite.flip_h = false
 
 func _on_timer_timeout() -> void:
 	shoot()
