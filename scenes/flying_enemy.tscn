@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://6bcnjf3ye2ny"]
+[gd_scene load_steps=8 format=3 uid="uid://6bcnjf3ye2ny"]
 
 [ext_resource type="Script" path="res://scripts/flying_enemy.gd" id="1_mpgh7"]
 [ext_resource type="Texture2D" uid="uid://wdlsicw3b071" path="res://assets/sprites/flyingwhatever.png" id="1_n6do6"]
+[ext_resource type="AudioStream" uid="uid://cb2u57v5qmjmt" path="res://assets/sounds/tap.wav" id="3_eo4pq"]
 
 [sub_resource type="Animation" id="Animation_sbmu4"]
 length = 0.001
@@ -59,6 +60,10 @@ autoplay = "idle"
 
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_eo4pq")
+bus = &"SFX"
 
 [node name="Vision" type="Area2D" parent="."]
 collision_layer = 0

@@ -3,6 +3,7 @@ var target : Node2D
 var bullet_scene = preload("res://scenes/bullet.tscn")
 @onready var shoot_timer = $ShootTimer
 @onready var sprite = $Sprite2D
+@onready var shoot_sound = $ShootSound
 
 func _process(delta: float) -> void:
 	if target:
@@ -31,4 +32,5 @@ func shoot():
 		var bullet_instance = bullet_scene.instantiate()
 		bullet_instance.direction = direction
 		bullet_instance.spawn_pos = global_position
+		shoot_sound.play()
 		get_tree().get_root().add_child(bullet_instance)

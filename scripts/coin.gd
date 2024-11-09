@@ -10,3 +10,7 @@ func _on_body_entered(body: Node2D) -> void:
 		pickup_sound.stop()
 	pickup_sound.play()
 	animation_player.play("pickup")
+
+
+func _on_pickup_sound_finished() -> void:
+	queue_free()

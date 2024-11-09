@@ -13,7 +13,8 @@ var can_move: bool = true
 @onready var coyote_timer: Timer = $CoyoteTimer
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
 @onready var death_timer: Timer = $DeathTimer
-
+@onready var jump_sound = $JumpSound
+@onready var hurt_sound = $HurtSound
 func _physics_process(delta: float) -> void:
 	
 	# Add the gravity.
@@ -77,6 +78,8 @@ func add_jump():
 
 func jump():
 	velocity.y = JUMP_VELOCITY
+	jump_sound.play()
+	
 	if jump_count != 0:
 		animation_player.play("double_jump")
 	jump_count += 1 #take one jump
@@ -84,6 +87,7 @@ func jump():
 func damage():
 	can_move = false
 	
+	hurt_sound.play()
 	death_timer.start()
 	Engine.time_scale = 0.5
 	
