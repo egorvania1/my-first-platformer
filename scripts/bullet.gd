@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 func _on_life_timer_timeout() -> void:
-	destroy()
+	queue_free()
 
 func _on_killzone_body_entered(body: Node2D) -> void:
 	destroy()

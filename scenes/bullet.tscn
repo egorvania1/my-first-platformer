@@ -34,6 +34,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 3]
+}
 
 [sub_resource type="Animation" id="Animation_o23nk"]
 length = 0.001
@@ -61,6 +73,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7t5ws"]
 _data = {
@@ -73,6 +97,8 @@ script = ExtResource("1_kh04k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_jsnm7")
+hframes = 4
+vframes = 2
 
 [node name="LifeTimer" type="Timer" parent="."]
 wait_time = 10.0
