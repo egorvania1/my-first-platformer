@@ -16,7 +16,7 @@
 - [x] Способность: двойной прыжок (по умолчанию нету у игрока)
 
 ### Скорее всего не добавлю:
-- [ ] HUD
+- [x] HUD (ой)
 - [ ] 4-ый уровень с боссом
 - [ ] Платформы без AnimationPlayer
 - [ ] Анимации с эффектами к игроку
@@ -31,5 +31,7 @@
 - https://www.youtube.com/watch?v=GZrALMvOwY8 (Смена уровня)
 - https://forum.godotengine.org/t/2d-platformer-how-to-control-jump-height-mario-like-jumps/28736/3 (Прыжок от силы нажатия)
 - https://www.youtube.com/watch?v=hRQW580zEJE (Buffer jump)
+- https://www.youtube.com/watch?v=sc-tEPdLZhk (Глобальные переменные)
+- https://www.youtube.com/watch?v=y1E_y9AIqow&list=PLhqJJNjsQ7KGXNbfsUHJbb5-s2Tujtjt4 (Интерфейс)
 
 ![Screenshot](https://github.com/egorvania1/my-first-platformer/blob/main/platformer.png)
