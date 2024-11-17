@@ -1,16 +1,17 @@
-[gd_scene load_steps=20 format=4 uid="uid://c3b66v8gbcl0y"]
+[gd_scene load_steps=21 format=4 uid="uid://c3b66v8gbcl0y"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_4wmnh"]
+[ext_resource type="PackedScene" uid="uid://b25xmby6hfh7r" path="res://scenes/ui/HUD.tscn" id="1_a77tl"]
 [ext_resource type="FontFile" uid="uid://bkfd4gq3m14j3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_j78mo"]
 [ext_resource type="TileSet" uid="uid://kfd0ev30o4kt" path="res://resources/world_tileset.tres" id="3_vvmi0"]
 [ext_resource type="PackedScene" uid="uid://b0gi4br7e1ctj" path="res://scenes/player.tscn" id="4_h76ov"]
-[ext_resource type="PackedScene" uid="uid://lclqkoen4lk5" path="res://scenes/killzone.tscn" id="5_gw5nn"]
-[ext_resource type="PackedScene" uid="uid://bdyv8nabhvqu5" path="res://scenes/platform.tscn" id="6_deeum"]
-[ext_resource type="PackedScene" uid="uid://bl5gswpbqng7i" path="res://scenes/coin.tscn" id="7_5cucn"]
-[ext_resource type="PackedScene" uid="uid://be2awtk52gqac" path="res://scenes/slime.tscn" id="8_xrjws"]
+[ext_resource type="PackedScene" uid="uid://lclqkoen4lk5" path="res://scenes/enemy/killzone.tscn" id="5_gw5nn"]
+[ext_resource type="PackedScene" uid="uid://bdyv8nabhvqu5" path="res://scenes/level_stuff/platform.tscn" id="6_deeum"]
+[ext_resource type="PackedScene" uid="uid://bl5gswpbqng7i" path="res://scenes/level_stuff/coin.tscn" id="7_5cucn"]
+[ext_resource type="PackedScene" uid="uid://be2awtk52gqac" path="res://scenes/enemy/slime.tscn" id="8_xrjws"]
 [ext_resource type="FontFile" uid="uid://cpysb18xj5pt2" path="res://assets/fonts/PixelOperator8.ttf" id="9_urcjv"]
-[ext_resource type="PackedScene" uid="uid://cqsxnop3mmh62" path="res://scenes/level_change.tscn" id="10_8gd61"]
-[ext_resource type="PackedScene" uid="uid://bs4eg10665nfu" path="res://scenes/jump_powerup.tscn" id="11_2y0we"]
+[ext_resource type="PackedScene" uid="uid://cqsxnop3mmh62" path="res://scenes/level_stuff/level_change.tscn" id="10_8gd61"]
+[ext_resource type="PackedScene" uid="uid://bs4eg10665nfu" path="res://scenes/level_stuff/jump_powerup.tscn" id="11_2y0we"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_agoeb"]
 
@@ -94,6 +95,8 @@ _data = {
 size = Vector2(160, 413)
 
 [node name="Level1" type="Node2D"]
+
+[node name="Hud" parent="." instance=ExtResource("1_a77tl")]
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true

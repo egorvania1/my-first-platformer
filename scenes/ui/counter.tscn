@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkr73stdvmaj0"]
+
+[ext_resource type="Texture2D" uid="uid://drhm1paft271m" path="res://assets/interface/bg.png" id="1_iaoln"]
+
+[node name="Counter" type="NinePatchRect"]
+offset_right = 84.0
+offset_bottom = 27.0
+texture = ExtResource("1_iaoln")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3

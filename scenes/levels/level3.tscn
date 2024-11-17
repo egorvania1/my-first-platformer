@@ -2,12 +2,12 @@
 
 [ext_resource type="TileSet" uid="uid://kfd0ev30o4kt" path="res://resources/world_tileset.tres" id="1_q53cy"]
 [ext_resource type="PackedScene" uid="uid://b0gi4br7e1ctj" path="res://scenes/player.tscn" id="2_2034b"]
-[ext_resource type="PackedScene" uid="uid://bs4eg10665nfu" path="res://scenes/jump_powerup.tscn" id="3_5sd75"]
-[ext_resource type="PackedScene" uid="uid://lclqkoen4lk5" path="res://scenes/killzone.tscn" id="4_shhg4"]
-[ext_resource type="PackedScene" uid="uid://6bcnjf3ye2ny" path="res://scenes/flying_enemy.tscn" id="5_7n82g"]
+[ext_resource type="PackedScene" uid="uid://bs4eg10665nfu" path="res://scenes/level_stuff/jump_powerup.tscn" id="3_5sd75"]
+[ext_resource type="PackedScene" uid="uid://lclqkoen4lk5" path="res://scenes/enemy/killzone.tscn" id="4_shhg4"]
+[ext_resource type="PackedScene" uid="uid://6bcnjf3ye2ny" path="res://scenes/enemy/flying_enemy.tscn" id="5_7n82g"]
 [ext_resource type="FontFile" uid="uid://cpysb18xj5pt2" path="res://assets/fonts/PixelOperator8.ttf" id="6_6h5g8"]
-[ext_resource type="PackedScene" uid="uid://bl5gswpbqng7i" path="res://scenes/coin.tscn" id="7_my3qj"]
-[ext_resource type="PackedScene" uid="uid://cqsxnop3mmh62" path="res://scenes/level_change.tscn" id="8_adkbj"]
+[ext_resource type="PackedScene" uid="uid://bl5gswpbqng7i" path="res://scenes/level_stuff/coin.tscn" id="7_my3qj"]
+[ext_resource type="PackedScene" uid="uid://cqsxnop3mmh62" path="res://scenes/level_stuff/level_change.tscn" id="8_adkbj"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="9_x7gp4"]
 [ext_resource type="FontFile" uid="uid://bkfd4gq3m14j3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="10_40nc6"]
 

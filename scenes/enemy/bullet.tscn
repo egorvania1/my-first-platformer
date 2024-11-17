@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_kh04k"]
 [ext_resource type="Texture2D" uid="uid://d4k2cibqgb4xo" path="res://assets/sprites/bullet.png" id="2_jsnm7"]
-[ext_resource type="PackedScene" uid="uid://lclqkoen4lk5" path="res://scenes/killzone.tscn" id="3_rc648"]
+[ext_resource type="PackedScene" uid="uid://lclqkoen4lk5" path="res://scenes/enemy/killzone.tscn" id="3_rc648"]
 [ext_resource type="AudioStream" uid="uid://bdlj17xd5qq4j" path="res://assets/sounds/explosion.wav" id="4_nixcf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m1vcg"]

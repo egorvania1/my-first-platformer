@@ -2,16 +2,16 @@
 
 [ext_resource type="TileSet" uid="uid://kfd0ev30o4kt" path="res://resources/world_tileset.tres" id="1_j181h"]
 [ext_resource type="PackedScene" uid="uid://b0gi4br7e1ctj" path="res://scenes/player.tscn" id="2_6yc80"]
-[ext_resource type="PackedScene" uid="uid://lclqkoen4lk5" path="res://scenes/killzone.tscn" id="3_ag8h2"]
-[ext_resource type="PackedScene" uid="uid://c8woaijp01fsf" path="res://scenes/spike.tscn" id="4_6nnib"]
-[ext_resource type="PackedScene" uid="uid://be2awtk52gqac" path="res://scenes/slime.tscn" id="5_035gt"]
+[ext_resource type="PackedScene" uid="uid://lclqkoen4lk5" path="res://scenes/enemy/killzone.tscn" id="3_ag8h2"]
+[ext_resource type="PackedScene" uid="uid://c8woaijp01fsf" path="res://scenes/enemy/spike.tscn" id="4_6nnib"]
+[ext_resource type="PackedScene" uid="uid://be2awtk52gqac" path="res://scenes/enemy/slime.tscn" id="5_035gt"]
 [ext_resource type="FontFile" uid="uid://cpysb18xj5pt2" path="res://assets/fonts/PixelOperator8.ttf" id="6_ro3ma"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="7_b0cy8"]
 [ext_resource type="FontFile" uid="uid://bkfd4gq3m14j3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_hp0dr"]
-[ext_resource type="PackedScene" uid="uid://bl5gswpbqng7i" path="res://scenes/coin.tscn" id="9_emoon"]
-[ext_resource type="PackedScene" uid="uid://cqsxnop3mmh62" path="res://scenes/level_change.tscn" id="10_i2qh8"]
-[ext_resource type="PackedScene" uid="uid://db4hu427idym8" path="res://scenes/platform_desert.tscn" id="11_k46s4"]
-[ext_resource type="PackedScene" uid="uid://6bcnjf3ye2ny" path="res://scenes/flying_enemy.tscn" id="12_6omya"]
+[ext_resource type="PackedScene" uid="uid://bl5gswpbqng7i" path="res://scenes/level_stuff/coin.tscn" id="9_emoon"]
+[ext_resource type="PackedScene" uid="uid://cqsxnop3mmh62" path="res://scenes/level_stuff/level_change.tscn" id="10_i2qh8"]
+[ext_resource type="PackedScene" uid="uid://db4hu427idym8" path="res://scenes/level_stuff/platform_desert.tscn" id="11_k46s4"]
+[ext_resource type="PackedScene" uid="uid://6bcnjf3ye2ny" path="res://scenes/enemy/flying_enemy.tscn" id="12_6omya"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hta2y"]
 distance = -204.0

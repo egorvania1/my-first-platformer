@@ -1,6 +1,6 @@
 extends CharacterBody2D
 var target : Node2D
-var bullet_scene = preload("res://scenes/bullet.tscn")
+var bullet_scene = preload("res://scenes/enemy/bullet.tscn")
 @onready var shoot_timer = $ShootTimer
 @onready var sprite = $Sprite2D
 @onready var shoot_sound = $ShootSound
