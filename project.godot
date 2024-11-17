@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Music="*res://scenes/level_stuff/music.tscn"
 GlobalHotkeys="*res://scenes/global_hotkeys.tscn"
+GlobalVariables="*res://scenes/global_variables.tscn"
 
 [input]
 

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://beu8bgjyqkrc6"]
+
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_d1ndo"]
+[ext_resource type="FontFile" uid="uid://bkfd4gq3m14j3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_ejddk"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_d1ndo")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 1127.0
+offset_top = -24.0
+offset_right = 1304.0
+offset_bottom = -16.0
+theme_override_fonts/font = ExtResource("2_ejddk")
+theme_override_font_sizes/font_size = 8
+text = "You have colleted X coins"
+metadata/_edit_use_anchors_ = true

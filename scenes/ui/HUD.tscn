@@ -1,133 +1,26 @@
-[gd_scene load_steps=16 format=3 uid="uid://b25xmby6hfh7r"]
+[gd_scene load_steps=3 format=3 uid="uid://b25xmby6hfh7r"]
 
-[ext_resource type="Texture2D" uid="uid://drhm1paft271m" path="res://assets/interface/bg.png" id="1_ee8ps"]
-[ext_resource type="Texture2D" uid="uid://csdyp3mbyhdvs" path="res://assets/sprites/coin.png" id="2_pbjxm"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r0iq0"]
-atlas = ExtResource("2_pbjxm")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h4snw"]
-atlas = ExtResource("2_pbjxm")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ccww"]
-atlas = ExtResource("2_pbjxm")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nmkud"]
-atlas = ExtResource("2_pbjxm")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gi81h"]
-atlas = ExtResource("2_pbjxm")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3qbxy"]
-atlas = ExtResource("2_pbjxm")
-region = Rect2(80, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1scko"]
-atlas = ExtResource("2_pbjxm")
-region = Rect2(96, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_07m7j"]
-atlas = ExtResource("2_pbjxm")
-region = Rect2(112, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_06idy"]
-atlas = ExtResource("2_pbjxm")
-region = Rect2(128, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dgchy"]
-atlas = ExtResource("2_pbjxm")
-region = Rect2(144, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7fcwk"]
-atlas = ExtResource("2_pbjxm")
-region = Rect2(160, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vj2lg"]
-atlas = ExtResource("2_pbjxm")
-region = Rect2(176, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_sefsd"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r0iq0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h4snw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2ccww")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nmkud")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gi81h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3qbxy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1scko")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_07m7j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_06idy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dgchy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7fcwk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vj2lg")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
+[ext_resource type="PackedScene" uid="uid://cgbkmhojvm2xl" path="res://scenes/ui/coins_counter.tscn" id="1_7c37p"]
+[ext_resource type="PackedScene" uid="uid://bvvcrlyhmdu8b" path="res://scenes/ui/time_counter.tscn" id="2_7qhs5"]
 
 [node name="Hud" type="CanvasLayer"]
-scale = Vector2(3, 3)
-transform = Transform2D(3, 0, 0, 3, 0, 0)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 63.0
-offset_bottom = 24.0
-texture = ExtResource("1_ee8ps")
-patch_margin_left = 3
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/NinePatchRect"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -8.0
-offset_right = 16.0
-offset_bottom = 8.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/NinePatchRect/MarginContainer"]
-position = Vector2(8, 8)
-sprite_frames = SubResource("SpriteFrames_sefsd")
-autoplay = "default"
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="CoinsCounter" parent="Control/VBoxContainer" instance=ExtResource("1_7c37p")]
+layout_mode = 2
+
+[node name="TimeCounter" parent="Control/VBoxContainer" instance=ExtResource("2_7qhs5")]
+layout_mode = 2

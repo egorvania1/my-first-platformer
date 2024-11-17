@@ -8,6 +8,7 @@ var jump_count: int = 0
 var jump_avaliable: bool = true
 var can_move: bool = true
 
+@onready var game_manager: Node = %GameManager
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var coyote_timer: Timer = $CoyoteTimer
@@ -100,5 +101,6 @@ func damage():
 
 
 func _on_death_timer_timeout() -> void:
+	game_manager.reset_score()
 	Engine.time_scale = 1.0
 	get_tree().reload_current_scene()
