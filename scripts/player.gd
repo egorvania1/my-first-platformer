@@ -101,6 +101,7 @@ func damage():
 
 
 func _on_death_timer_timeout() -> void:
-	game_manager.reset_score()
+	if game_manager: game_manager.reset_score()
+	else: get_tree().quit()
 	Engine.time_scale = 1.0
 	get_tree().reload_current_scene()
