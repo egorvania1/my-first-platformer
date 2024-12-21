@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=3 uid="uid://t3inc0syt6nb"]
+
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_ono7c"]
+[ext_resource type="Texture2D" uid="uid://d4k2cibqgb4xo" path="res://assets/sprites/bullet.png" id="2_3xg4w"]
+[ext_resource type="PackedScene" uid="uid://lclqkoen4lk5" path="res://scenes/enemy/killzone.tscn" id="3_vyby6"]
+[ext_resource type="AudioStream" uid="uid://bdlj17xd5qq4j" path="res://assets/sounds/explosion.wav" id="4_1xlig"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m1vcg"]
+radius = 4.0
+
+[sub_resource type="Animation" id="Animation_o23nk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Killzone/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_wyoca"]
+resource_name = "destroy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Killzone/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7t5ws"]
+_data = {
+"RESET": SubResource("Animation_o23nk"),
+"destroy": SubResource("Animation_wyoca")
+}
+
+[node name="BossBullet" type="CharacterBody2D"]
+script = ExtResource("1_ono7c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3xg4w")
+hframes = 4
+vframes = 2
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Killzone" parent="." instance=ExtResource("3_vyby6")]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("CircleShape2D_m1vcg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7t5ws")
+}
+
+[node name="CollideSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1xlig")
+bus = &"SFX"
+
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]
+[connection signal="body_entered" from="Killzone" to="." method="_on_killzone_body_entered"]
