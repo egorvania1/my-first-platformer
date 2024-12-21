@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=4 uid="uid://6eg6d2rc2knq"]
+
+[ext_resource type="PackedScene" uid="uid://bdyv8nabhvqu5" path="res://scenes/level_stuff/platform.tscn" id="1_0r4iy"]
+[ext_resource type="PackedScene" uid="uid://b0gi4br7e1ctj" path="res://scenes/player.tscn" id="2_lgkjr"]
+[ext_resource type="PackedScene" uid="uid://htdh22217pxf" path="res://scenes/enemy/boss.tscn" id="3_7c2qc"]
+[ext_resource type="TileSet" uid="uid://kfd0ev30o4kt" path="res://resources/world_tileset.tres" id="4_4doof"]
+
+[sub_resource type="Animation" id="Animation_06oo7"]
+resource_name = "move"
+length = 7.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.66667, 5.06667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-74, -58), Vector2(-74, 59), Vector2(74, 59), Vector2(74, -58)]
+}
+
+[sub_resource type="Animation" id="Animation_54tcc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-74, -58)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ld3nk"]
+_data = {
+"RESET": SubResource("Animation_54tcc"),
+"move": SubResource("Animation_06oo7")
+}
+
+[node name="Level4" type="Node2D"]
+
+[node name="Platform" parent="." instance=ExtResource("1_0r4iy")]
+position = Vector2(-74, -58)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform"]
+libraries = {
+"": SubResource("AnimationLibrary_ld3nk")
+}
+autoplay = "move"
+
+[node name="Player" parent="." instance=ExtResource("2_lgkjr")]
+position = Vector2(-74, -74)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Flying Enemy" parent="." instance=ExtResource("3_7c2qc")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD2/wYAAAAEAAAAAAD3/wYAAAAEAAAAAAD4/wYAAAAEAAAAAAD5/wYAAAAEAAAAAAD6/wYAAAAEAAAAAAD7/wYAAAAEAAAAAAD8/wYAAAAEAAAAAAD9/wYAAAAEAAAAAAD+/wYAAAAEAAAAAAD//wYAAAAEAAAAAAAAAAYAAAAEAAAAAAABAAYAAAAEAAAAAAACAAYAAAAEAAAAAAADAAYAAAAEAAAAAAAEAAYAAAAEAAAAAAAFAAYAAAAEAAAAAAAGAAYAAAAEAAAAAAAHAAYAAAAEAAAAAAAIAAYAAAAEAAAAAAAJAAYAAAAEAAAAAAAKAAYAAAAEAAAAAAD1/wYAAAAEAAAAAAD0/wYAAAAEAAEAAAD0/wUAAAAEAAEAAAD0/wQAAAAEAAEAAAD0/wMAAAAEAAEAAAD0/wIAAAAEAAEAAAD0/wEAAAAEAAEAAAD0/wAAAAAEAAEAAAD0////AAAEAAEAAAD0//7/AAAEAAEAAAD0//3/AAAEAAEAAAD0//z/AAAEAAEAAAD0//v/AAAEAAEAAAD0//r/AAAEAAEAAAD0//n/AAAEAAEAAAD0//j/AAAEAAEAAAD1//j/AAAEAAEAAAD2//j/AAAEAAEAAAD3//j/AAAEAAEAAAD4//j/AAAEAAEAAAD5//j/AAAEAAEAAAD6//j/AAAEAAEAAAD7//j/AAAEAAEAAAD8//j/AAAEAAEAAAD9//j/AAAEAAEAAAD+//j/AAAEAAEAAAD///j/AAAEAAEAAAAAAPj/AAAEAAEAAAABAPj/AAAEAAEAAAACAPj/AAAEAAEAAAADAPj/AAAEAAEAAAAEAPj/AAAEAAEAAAAFAPj/AAAEAAEAAAAGAPj/AAAEAAEAAAAHAPj/AAAEAAEAAAAIAPj/AAAEAAEAAAAJAPj/AAAEAAEAAAAKAPj/AAAEAAEAAAAKAAUAAAAEAAEAAAAKAAQAAAAEAAEAAAAKAAMAAAAEAAEAAAAKAAIAAAAEAAEAAAAKAAEAAAAEAAEAAAAKAAAAAAAEAAEAAAAKAP//AAAEAAEAAAAKAP7/AAAEAAEAAAAKAP3/AAAEAAEAAAAKAPz/AAAEAAEAAAAKAPv/AAAEAAEAAAAKAPr/AAAEAAEAAAAKAPn/AAAEAAEAAAA=")
+tile_set = ExtResource("4_4doof")
