@@ -5,6 +5,7 @@ const SPEED: float = 130.0
 const JUMP_VELOCITY: float = -320.0
 var jump_count: int = 0
 @export var max_jumps: int = 1
+@export var has_gun: int = 0
 var jump_avaliable: bool = true
 var can_move: bool = true
 
@@ -16,6 +17,7 @@ var can_move: bool = true
 @onready var death_timer: Timer = $DeathTimer
 @onready var jump_sound = $JumpSound
 @onready var hurt_sound = $HurtSound
+
 func _physics_process(delta: float) -> void:
 	
 	# Add the gravity.
@@ -76,6 +78,9 @@ func _physics_process(delta: float) -> void:
 
 func add_jump():
 	max_jumps += 1
+	
+func give_gun():
+	pass
 
 func jump():
 	velocity.y = JUMP_VELOCITY
