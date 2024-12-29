@@ -19,7 +19,7 @@ func _on_timer_timeout() -> void:
 func _on_vision_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		target = body
-		shoot()
+		call_deferred("shoot")
 		shoot_timer.start()
 
 func _on_vision_body_exited(body: Node2D) -> void:
