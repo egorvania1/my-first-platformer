@@ -1,5 +1,6 @@
 extends CharacterBody2D
 @export var SPEED = 85
+#direction and spawn_pos is being set by parent node
 var direction
 var spawn_pos : Vector2
 @onready var animation_player = $AnimationPlayer

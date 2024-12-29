@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://1waj0baqhm2k"]
+
+[ext_resource type="Texture2D" uid="uid://c0y386jy0skay" path="res://assets/sprites/redacted_projectile.png" id="1_3k1ug"]
+[ext_resource type="Script" path="res://scripts/gun_bullet.gd" id="1_bvxop"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vcpk2"]
+
+[node name="GunBullet" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_bvxop")
+
+[node name="RedactedProjectile" type="Sprite2D" parent="."]
+texture = ExtResource("1_3k1ug")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vcpk2")

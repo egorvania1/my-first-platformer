@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://b0gi4br7e1ctj"]
+[gd_scene load_steps=15 format=3 uid="uid://b0gi4br7e1ctj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_g1s6m"]
 [ext_resource type="Texture2D" uid="uid://55w0oy8ed2vm" path="res://assets/sprites/knight.png" id="1_okoce"]
+[ext_resource type="PackedScene" uid="uid://7f0gos2vsoot" path="res://scenes/gun.tscn" id="2_0dfoc"]
 [ext_resource type="PackedScene" uid="uid://b25xmby6hfh7r" path="res://scenes/ui/HUD.tscn" id="2_pyemj"]
 [ext_resource type="AudioStream" uid="uid://i4b11galuk4x" path="res://assets/sounds/jump.wav" id="3_fw2gp"]
 [ext_resource type="AudioStream" uid="uid://yokul4dxx20i" path="res://assets/sounds/hurt.wav" id="4_5wo1y"]
@@ -132,6 +133,8 @@ _data = {
 z_index = 1
 collision_layer = 2
 script = ExtResource("1_g1s6m")
+
+[node name="Gun" parent="." instance=ExtResource("2_0dfoc")]
 
 [node name="Hud" parent="." instance=ExtResource("2_pyemj")]
 
