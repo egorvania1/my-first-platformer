@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 100.0
+const SPEED = 300.0
 
 func _ready() -> void:
 	velocity = transform.x * Vector2(SPEED, SPEED)
