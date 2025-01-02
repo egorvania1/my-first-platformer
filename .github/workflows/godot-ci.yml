@@ -1,5 +1,4 @@
 name: godot-ci
-uses: abarichello/godot-ci@4.3-stable
 on: push
 
 env:
