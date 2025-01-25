@@ -5,7 +5,8 @@ const SPEED: float = 130.0
 const JUMP_VELOCITY: float = -320.0
 var jump_count: int = 0
 @export var max_jumps: int = 1
-@export var has_gun: bool = false
+@export var do_give_gun: bool = false
+var has_gun: bool = false
 var jump_avaliable: bool = true
 var can_move: bool = true
 
@@ -18,6 +19,9 @@ var gun = preload("res://scenes/gun.tscn")
 @onready var death_timer: Timer = $DeathTimer
 @onready var jump_sound = $JumpSound
 @onready var hurt_sound = $HurtSound
+
+func _ready():
+	if do_give_gun: give_gun()
 
 func _physics_process(delta: float) -> void:
 	
