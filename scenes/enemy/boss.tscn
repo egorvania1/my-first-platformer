@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://htdh22217pxf"]
+[gd_scene load_steps=9 format=3 uid="uid://htdh22217pxf"]
 
 [ext_resource type="Script" path="res://scripts/boss.gd" id="1_s22iy"]
 [ext_resource type="Script" path="res://scripts/rotator.gd" id="2_txer3"]
@@ -67,7 +67,11 @@ _data = {
 "idle": SubResource("Animation_fgcv8")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ffq87"]
+
 [node name="BossEnemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 8
 script = ExtResource("1_s22iy")
 
 [node name="Rotator" type="Node2D" parent="."]
@@ -92,5 +96,17 @@ one_shot = true
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_gst7r")
 bus = &"SFX"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_ffq87")
+
+[node name="BossBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -44.0
+offset_top = -46.0
+offset_right = 44.0
+offset_bottom = -19.0
+show_percentage = false
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_timer_timeout"]

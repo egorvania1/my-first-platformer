@@ -13,8 +13,9 @@ func _physics_process(delta: float) -> void:
 		else: ttl -= 1
 		velocity = velocity.bounce(collision.get_normal())
 		look_at(velocity)
-		#if collision.get_collider().has_method("hit"):
-		#	collision.get_collider().hit()
+		if collision.get_collider().has_method("damage"):
+			collision.get_collider().damage()
+			destroy()
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
