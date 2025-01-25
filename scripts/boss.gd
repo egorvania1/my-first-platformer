@@ -6,6 +6,8 @@ var bullet_scene = preload("res://scenes/enemy/boss_bullet.tscn")
 @onready var target = %Player
 @onready var rotator = %Rotator
 
+@export var health = 10
+
 func _ready():
 	shoot_timer.start()
 
@@ -22,7 +24,7 @@ func _on_timer_timeout() -> void:
 func shoot():
 	if target and shoot_timer.is_stopped():
 		shoot_timer.start()
-		pattern1()
+		#pattern1()
 		pattern2()
 		
 
@@ -40,3 +42,10 @@ func pattern2():
 		bullet_instance.velocity = rotator.global_position.direction_to(s.global_position)
 		bullet_instance.position = s.global_position
 		add_child(bullet_instance)
+
+func damage():
+	health -= 1
+	if health == 0: death()
+
+func death():
+	queue_free()
