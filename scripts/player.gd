@@ -5,7 +5,7 @@ const SPEED: float = 130.0
 const JUMP_VELOCITY: float = -320.0
 var jump_count: int = 0
 @export var max_jumps: int = 1
-var has_gun: bool = false
+@export var has_gun: bool = false
 var jump_avaliable: bool = true
 var can_move: bool = true
 

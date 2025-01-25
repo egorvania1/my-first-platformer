@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://6eg6d2rc2knq"]
+[gd_scene load_steps=11 format=4 uid="uid://6eg6d2rc2knq"]
 
 [ext_resource type="TileSet" uid="uid://kfd0ev30o4kt" path="res://resources/world_tileset.tres" id="1_cmi25"]
 [ext_resource type="PackedScene" uid="uid://bdyv8nabhvqu5" path="res://scenes/level_stuff/platform.tscn" id="2_et076"]
 [ext_resource type="PackedScene" uid="uid://b0gi4br7e1ctj" path="res://scenes/player.tscn" id="3_ujdnd"]
-[ext_resource type="PackedScene" uid="uid://7f0gos2vsoot" path="res://scenes/gun.tscn" id="4_j2yfu"]
 [ext_resource type="PackedScene" uid="uid://htdh22217pxf" path="res://scenes/enemy/boss.tscn" id="5_a0v62"]
 [ext_resource type="PackedScene" uid="uid://dh2hw02mb4yy4" path="res://scenes/level_stuff/gun_powerup.tscn" id="6_lmtvv"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="7_daffn"]
@@ -70,8 +69,6 @@ autoplay = "move"
 unique_name_in_owner = true
 position = Vector2(-278, 85)
 max_jumps = 2
-
-[node name="Gun" parent="Player" instance=ExtResource("4_j2yfu")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
