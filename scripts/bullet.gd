@@ -1,14 +1,11 @@
 extends CharacterBody2D
 @export var SPEED = 85
 #direction and spawn_pos is being set by parent node
-var direction
-var spawn_pos : Vector2
 @onready var animation_player = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	velocity = direction * SPEED
-	global_position = spawn_pos
+	velocity *= SPEED
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -24,4 +21,7 @@ func destroy():
 	velocity *= 0
 	animation_player.play("destroy")
 	await animation_player.animation_finished
+	queue_free()
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()

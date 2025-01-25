@@ -69,6 +69,8 @@ _data = {
 }
 
 [node name="BossBullet" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_ono7c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -95,5 +97,8 @@ libraries = {
 stream = ExtResource("4_1xlig")
 bus = &"SFX"
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
 [connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]
 [connection signal="body_entered" from="Killzone" to="." method="_on_killzone_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

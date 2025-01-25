@@ -119,5 +119,8 @@ libraries = {
 stream = ExtResource("4_nixcf")
 bus = &"SFX"
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
 [connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]
 [connection signal="body_entered" from="Killzone" to="." method="_on_killzone_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
