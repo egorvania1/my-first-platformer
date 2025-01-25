@@ -44,6 +44,7 @@ func pattern2():
 		add_child(bullet_instance)
 
 func damage():
+	print_debug("damaged")
 	health -= 1
 	if health == 0: death()
 
