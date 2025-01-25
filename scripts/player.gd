@@ -5,10 +5,11 @@ const SPEED: float = 130.0
 const JUMP_VELOCITY: float = -320.0
 var jump_count: int = 0
 @export var max_jumps: int = 1
-@export var has_gun: int = 0
+var has_gun: bool = false
 var jump_avaliable: bool = true
 var can_move: bool = true
 
+var gun = preload("res://scenes/gun.tscn")
 @onready var game_manager: Node = %GameManager
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -80,7 +81,10 @@ func add_jump():
 	max_jumps += 1
 	
 func give_gun():
-	pass
+	if !has_gun:
+		has_gun = true
+		var gun_instance = gun.instantiate()
+		add_child(gun_instance)
 
 func jump():
 	velocity.y = JUMP_VELOCITY
@@ -100,7 +104,6 @@ func damage():
 	animation_player.play("death")
 	velocity.x = 0
 	velocity.y = 0
-	#get_node("CollisionShape2D").queue_free()
 
 	print("You died...")
 

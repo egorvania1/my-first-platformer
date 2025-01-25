@@ -1,6 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://htdh22217pxf"]
 
 [ext_resource type="Script" path="res://scripts/boss.gd" id="1_s22iy"]
+[ext_resource type="Script" path="res://scripts/rotator.gd" id="2_txer3"]
 [ext_resource type="Texture2D" uid="uid://dptb71vp3ll08" path="res://assets/sprites/jellyfish.png" id="2_x6yna"]
 [ext_resource type="AudioStream" uid="uid://cb2u57v5qmjmt" path="res://assets/sounds/tap.wav" id="3_gst7r"]
 
@@ -66,11 +67,12 @@ _data = {
 "idle": SubResource("Animation_fgcv8")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujumk"]
-size = Vector2(166, 130)
-
 [node name="BossEnemy" type="CharacterBody2D"]
 script = ExtResource("1_s22iy")
+
+[node name="Rotator" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_txer3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -6)
@@ -85,18 +87,10 @@ autoplay = "idle"
 
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 0.1
+one_shot = true
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_gst7r")
 bus = &"SFX"
 
-[node name="Vision" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Vision"]
-shape = SubResource("RectangleShape2D_ujumk")
-
 [connection signal="timeout" from="ShootTimer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="Vision" to="." method="_on_vision_body_entered"]
-[connection signal="body_exited" from="Vision" to="." method="_on_vision_body_exited"]

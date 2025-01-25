@@ -85,6 +85,7 @@ autoplay = "idle"
 
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 2.0
+one_shot = true
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_eo4pq")

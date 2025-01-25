@@ -14,21 +14,21 @@ func _process(delta: float) -> void:
 			sprite.flip_h = false
 
 func _on_timer_timeout() -> void:
-	shoot()
+	call_deferred("shoot")
 
 func _on_vision_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		target = body
-		shoot()
-		shoot_timer.start()
+		call_deferred("shoot")
+		
 
 func _on_vision_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		target = null
-		shoot_timer.stop()
 
 func shoot():
-	if target:
+	if target and shoot_timer.is_stopped():
+		shoot_timer.start()
 		var direction = global_position.direction_to(target.global_position)
 		var bullet_instance = bullet_scene.instantiate()
 		bullet_instance.direction = direction
