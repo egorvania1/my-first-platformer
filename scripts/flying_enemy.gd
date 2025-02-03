@@ -31,7 +31,7 @@ func shoot():
 		shoot_timer.start()
 		var direction = global_position.direction_to(target.global_position)
 		var bullet_instance = bullet_scene.instantiate()
-		bullet_instance.direction = direction
-		bullet_instance.spawn_pos = global_position
+		bullet_instance.velocity = direction
+		bullet_instance.global_position = global_position
 		shoot_sound.play()
 		get_tree().get_root().add_child(bullet_instance)
